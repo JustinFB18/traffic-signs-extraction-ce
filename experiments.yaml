@@ -1,0 +1,58 @@
+experiments:
+  - name: base
+    dropout: 0.1
+    activation: ReLU
+    weight_decay: 0.0
+    early_stopping: false
+    learning_rate: 1e-4
+    batch_size: 4
+    epochs: 15
+    optimizer: Adam
+    scheduler: StepLR
+    criterion: CrossEntropy
+
+  - name: dropout_5
+	  dropout: 0.05
+
+  - name: dropout_15
+	  dropout: 0.15
+
+  - name: dropout_25
+	  dropout: 0.25
+
+  - name: activation_silu
+	  activation: SiLU
+
+  - name: activation_gelu
+	  activation: GELU
+
+  - name: weight_decay_on
+	  weight_decay: 1e-4
+
+  - name: optimizer_adamw
+	  optimizer: AdamW
+
+  - name: scheduler_plateau
+	  scheduler: ReduceLROnPlateau
+
+  - name: scheduler_cosine
+	  scheduler: CosineAnnealingLR
+
+  - name: criterion_smoothing
+	  criterion: CrossEntropySmoothing
+	  label_smoothing: 0.1
+
+  - name: lr_5e-5
+	  learning_rate: 5e-5
+
+  - name: lr_1e-6
+	  learning_rate: 1e-6
+
+  - name: batch_8
+	  batch_size: 8
+
+  - name: batch_16
+	  batch_size: 16
+
+  - name: batch_32
+	  batch_size: 32
